@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-
+import { Link } from "react-router-dom";
 const LandingPage = () => {
     const todayDate = new Date();
     const currentYear = todayDate.getFullYear();
@@ -15,12 +15,12 @@ const LandingPage = () => {
                         </h1>
                     </section>
                     <nav className="main-nav pad-5">
-                        <a href="#" className="user-link">
+                        <Link to="/docs" className="user-link">
                             Docs
-                        </a>
-                        <a href="#" className="user-link login">
+                        </Link>
+                        <Link to="/login" className="user-link login">
                             Login
-                        </a>
+                        </Link>
                     </nav>
                 </div>
             </header>
@@ -35,13 +35,14 @@ const LandingPage = () => {
                             way to create and integrate your task with Google
                             Calender.
                         </p>
-                        <button
+                        <Link
+                            to="/signup"
                             type="button"
                             aria-label="button"
                             className="btn btn-register"
                         >
                             Get Started
-                        </button>
+                        </Link>
                     </section>
                 </div>
             </section>
