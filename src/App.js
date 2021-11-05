@@ -31,16 +31,14 @@ const App = () => {
         load();
     }, []);
 
-    return (
-        !isAuthenticating && (
-            <ErrorBoundary>
-                <LoginContext.Provider value={{ login, setLogin }}>
-                    <BrowserRouter>
-                        <AppRoutes />
-                    </BrowserRouter>
-                </LoginContext.Provider>
-            </ErrorBoundary>
-        )
+    return !isAuthenticating(
+        <ErrorBoundary>
+            <LoginContext.Provider value={{ login, setLogin }}>
+                <BrowserRouter>
+                    <AppRoutes />
+                </BrowserRouter>
+            </LoginContext.Provider>
+        </ErrorBoundary>
     );
 };
 

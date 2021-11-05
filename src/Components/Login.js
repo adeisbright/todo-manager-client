@@ -15,6 +15,7 @@ const Login = () => {
     let [email, setEmail] = useState("");
     let [pwd, setPwd] = useState("");
     let [response, setResponse] = useState("");
+
     const handleSubmit = (e) => {
         e.preventDefault();
         let isAllValid = pwd && email;
@@ -67,6 +68,7 @@ const Login = () => {
                         autoComplete
                         onChange={(e) => setPwd(e.target.value)}
                     />
+                    <p>{response}</p>
                     <button type="submit" className="btn btn-register m-r-1">
                         Login
                     </button>

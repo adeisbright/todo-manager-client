@@ -28,7 +28,11 @@ const UnAuthenticatedRoute = ({ children, ...rest }) => {
                 children
             ) : (
                 <Redirect
-                    to={redirect === "" || redirect === null ? "/" : redirect}
+                    to={
+                        redirect === "" || redirect === null
+                            ? "/dashboard"
+                            : redirect
+                    }
                 />
             )}
         </Route>
