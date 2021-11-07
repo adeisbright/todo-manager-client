@@ -13,7 +13,11 @@ const AddTodo = () => {
     const hideModal = () => setShow(false);
     return (
         <div className="pad-tb-20">
-            <button href="#" className="toggle-modal" onClick={showModal}>
+            <button
+                href="#"
+                className="toggle-modal user-link login bg-yellow"
+                onClick={showModal}
+            >
                 Add +
             </button>
             <Modal handleClose={hideModal} show={show}>

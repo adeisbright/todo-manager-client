@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
-import { putData, getData } from "../../js/api";
+import { putData, getData } from "../lib/FetchHelper";
 import Modal from "./Modal";
-import LocalStorage from "../../js/CalenderService";
+import LocalStorage from "../lib/StorageService";
 const storage = new LocalStorage(window.localStorage);
 
 const SingleTodo = () => {

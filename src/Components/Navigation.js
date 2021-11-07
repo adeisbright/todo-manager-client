@@ -15,12 +15,12 @@ const Navigation = () => {
                             </a>
                         </h1>
                     </section>
-                    <nav className="d-small-toggle d-flex justify-between">
-                        <Link to="/api" className="m-r-1">
+                    <nav className="d-small-toggle d-flex justify-between main-nav pad-5">
+                        <Link to="/api" className="user-link m-r-1">
                             API
                         </Link>
                         <Logout />
-                        <AddTodo />
+                        <AddTodo className="user-link" />
                     </nav>
                 </div>
             </header>

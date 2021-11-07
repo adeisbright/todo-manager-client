@@ -6,7 +6,7 @@ import AuthenticatedRoute from "./lib/AuthenticatedRoute";
 const Login = lazy(() => import("./Components/Login"));
 const Todo = lazy(() => import("./Components/Todo"));
 const LandingPage = lazy(() => import("./Components/LandingPage"));
-// const SingleTodo = lazy(() => import("./components/SingleTodo"));
+const SingleTodo = lazy(() => import("./Components/SingleTodo"));
 // const Event = lazy(() => import("./components/Event"));
 // const DevelopersHub = lazy(() => import("./components/DevelopersHub"));
 
@@ -29,6 +29,11 @@ export default function AppRoutes() {
             <AuthenticatedRoute path="/dashboard" exact>
                 <Suspense fallback={<Preloader />}>
                     <Todo />
+                </Suspense>
+            </AuthenticatedRoute>
+            <AuthenticatedRoute path="/items/*" exact>
+                <Suspense fallback={<Preloader />}>
+                    <SingleTodo />
                 </Suspense>
             </AuthenticatedRoute>
             <UnAuthenticatedRoute path="/" exact>
