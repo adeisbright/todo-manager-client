@@ -8,14 +8,12 @@ const AddTodo = () => {
     const showModal = (e) => {
         e.stopPropagation();
         setShow(true);
-        console.log(show, e.target);
     };
     const hideModal = () => setShow(false);
     return (
         <div className="pad-tb-20">
             <button
-                href="#"
-                className="toggle-modal user-link login bg-yellow"
+                className="toggle-modal user-link login bg-green"
                 onClick={showModal}
             >
                 Add +

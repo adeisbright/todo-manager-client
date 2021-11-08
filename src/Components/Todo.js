@@ -47,7 +47,7 @@ const Todo = () => {
     const fetchItems = (url, authToken) => {
         getData(url, authToken)
             .then((result) => {
-                console.log(result);
+                // console.log(result);
                 if (Array.isArray(result.data)) {
                     setItems(result.data);
                 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useHistory, Redirect } from "react-router-dom";
-import { sendData } from "../../js/api";
-import LocalStorage from "../../js/CalenderService";
+import { sendData } from "../lib/FetchHelper";
+import LocalStorage from "../lib/StorageService";
 const storage = new LocalStorage(window.localStorage);
 const Event = () => {
     let [response, setResponse] = useState("");

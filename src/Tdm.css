@@ -590,6 +590,7 @@ a {
 }
 
 /*Styling input*/
+
 .input {
     display: inline-block;
     width: 100%;
@@ -608,7 +609,9 @@ a {
     border: 0.1px solid #ccc;
     box-shadow: 0 0 0 0.01rem #ccc;
 }
-
+.w-100 {
+    width: 100%;
+}
 /*Modal Styles*/
 .modal {
     position: fixed;
@@ -624,10 +627,10 @@ a {
     border-radius: 8px;
     position: fixed;
     top: 50%;
-    left: 50%;
+    left: 45%;
     transform: translate(-50%, -50%);
     height: auto;
-    width: 40%;
+    width: 80%;
 }
 .modal-closer {
     position: absolute;
@@ -651,6 +654,7 @@ a {
     padding: 8px 30px;
     border-radius: 5px;
     box-shadow: 2px 10px 3px #ccc;
+    border: none;
 }
 .bg-green {
     background: rgb(9, 107, 9);
@@ -695,6 +699,13 @@ a {
 .card-body {
     padding: 0.25rem 0.5rem;
 }
+.todo-form {
+    padding: 2rem;
+}
+.todo-form label {
+    display: block;
+    margin-bottom: 10px;
+}
 .todo-tools-revealer {
     position: absolute;
     right: 3px;
@@ -721,6 +732,9 @@ a {
 @media (max-width: 568px) {
     .login-sidebar {
         display: none;
+    }
+    .wrap-sm {
+        flex-wrap: wrap;
     }
 }
 @media (min-width: 768px) {
@@ -791,6 +805,10 @@ a {
     }
     .d-sm-hide {
         display: block;
+    }
+    .modal-main {
+        width: 40%;
+        left: 50%;
     }
 }
 @media (min-width: 1200px) {
