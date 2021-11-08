@@ -82,9 +82,7 @@ const TodoForm = ({ url }) => {
                             )
                                 .then((res) => {
                                     console.log(res);
-                                    setResponse(
-                                        `Here is your event link ${res.link}`
-                                    );
+                                    setResponse(`Event link ${res.link}`);
                                     //history.push("/");
                                 })
                                 .catch((err) => setResponse(err.message));

@@ -4,7 +4,7 @@ import Navigation from "./Navigation";
 import { deleteResource, getData } from "../lib/FetchHelper";
 import { TodoContext } from "../Context/TodosContext";
 import LocalStorage from "../lib/StorageService";
-
+import Tree from "../tree.webp";
 const storage = new LocalStorage(window.localStorage);
 
 const TodoRevealer = ({ click, index, n, id, removeTodo }) => {
@@ -128,45 +128,50 @@ const Todo = () => {
                                     id={item._id}
                                     removeTodo={removeTodo}
                                 />
-                                {!item.todo_avatar ? (
+                                {item.todo_avatar ? (
                                     <figure>
                                         <img
-                                            src={item.todo_avatar}
+                                            src={
+                                                item.todo_avatar.startsWith("h")
+                                                    ? item.todo_avatar
+                                                    : Tree
+                                            }
                                             alt="Avatar"
+                                            className="w-100 card-img"
                                         />
                                     </figure>
                                 ) : (
-                                    <div className="card-header bg-card-header">
-                                        <h3>{item.title}</h3>
-                                    </div>
+                                    <figure>
+                                        <img
+                                            src={Tree}
+                                            alt="Avatar"
+                                            className="w-100 card-img"
+                                        />
+                                    </figure>
                                 )}
                                 <div className="card-body m-b-1">
-                                    <p className="m-b-1">{item.created_at}</p>
+                                    <h3>{item.title}</h3>
+                                    <p className="m-b-1">
+                                        Starts :{" "}
+                                        {new Date(
+                                            item.startDate
+                                        ).toLocaleDateString()}
+                                    </p>
+                                    <p className="m-b-1">
+                                        Ends :{" "}
+                                        {new Date(
+                                            item.dueDate
+                                        ).toLocaleDateString()}
+                                    </p>
                                     <p>
-                                        {item.description.length > 100
+                                        {item.description.length > 50
                                             ? item.description.substring(
                                                   0,
-                                                  100
+                                                  50
                                               ) + "..."
                                             : item.description}
                                     </p>
                                 </div>
-                                {/* <div className="card-footer">
-                                    <button
-                                        className="btn btn-danger m-r-1"
-                                        onClick={() =>
-                                            removeTodo(item._id, loginToken)
-                                        }
-                                    >
-                                        Delete
-                                    </button>
-                                    <Link
-                                        to={`/items/${item._id}`}
-                                        className="btn btn-primary"
-                                    >
-                                        View
-                                    </Link>
-                                </div> */}
                             </div>
                         ))}
                     </div>

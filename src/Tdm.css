@@ -485,7 +485,7 @@ h6,
 /*Grid Container*/
 .d-grid {
     display: grid;
-    grid-auto-rows: 14rem;
+    grid-auto-rows: max-content;
 }
 .grid-3 {
     grid-template-columns: repeat(4, 1fr);
@@ -690,11 +690,16 @@ a {
 }
 
 /* Card Styling */
+.card-img {
+    height: 140px;
+    width: 100%;
+    object-fit: cover;
+}
 .card-header {
     background: rgb(36, 96, 110);
     color: #fff;
     padding: 2rem;
-    height: 80px;
+    height: 140px;
 }
 .card-body {
     padding: 0.25rem 0.5rem;
