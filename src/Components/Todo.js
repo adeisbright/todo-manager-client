@@ -83,41 +83,45 @@ const Todo = () => {
             {items ? (
                 <>
                     <Navigation />
-                    <div className="framer pad-tb-20">
-                        <strong>Filter Todo by Start Date</strong>
-                        <div className="d-flex">
-                            <div className="fr-md-3 m-r-1">
-                                <label htmlFor="start">Start Date</label>
-                                <input
-                                    type="date"
-                                    className="form-input"
-                                    onChange={(e) => setFrom(e.target.value)}
-                                />
-                            </div>
-                            <div className="fr-md-3 m-r-1">
-                                <label htmlFor="start">End Date</label>
-                                <input
-                                    type="date"
-                                    className="form-input"
-                                    onChange={(e) => setTo(e.target.value)}
-                                />
-                            </div>
-                            <div style={{ padding: "2.3rem" }}>
-                                <button
-                                    type="button"
-                                    className="btn btn-primary"
-                                    onClick={() =>
-                                        fetchItems(
-                                            `http://localhost:3500/items?from=${from}&to=${to}`,
-                                            loginToken
-                                        )
-                                    }
-                                >
-                                    Filter
-                                </button>
+                    {items.length > 0 && (
+                        <div className="framer pad-tb-20">
+                            <strong>Filter Todo by Start Date</strong>
+                            <div className="d-flex">
+                                <div className="fr-md-3 m-r-1">
+                                    <label htmlFor="start">Start Date</label>
+                                    <input
+                                        type="date"
+                                        className="form-input"
+                                        onChange={(e) =>
+                                            setFrom(e.target.value)
+                                        }
+                                    />
+                                </div>
+                                <div className="fr-md-3 m-r-1">
+                                    <label htmlFor="start">End Date</label>
+                                    <input
+                                        type="date"
+                                        className="form-input"
+                                        onChange={(e) => setTo(e.target.value)}
+                                    />
+                                </div>
+                                <div style={{ padding: "2.3rem" }}>
+                                    <button
+                                        type="button"
+                                        className="btn btn-primary"
+                                        onClick={() =>
+                                            fetchItems(
+                                                `http://localhost:3500/items?from=${from}&to=${to}`,
+                                                loginToken
+                                            )
+                                        }
+                                    >
+                                        Filter
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    )}
                     <div className="framer pad-tb-20 d-grid grid-3">
                         {items.map((item, index) => (
                             <div className="relative" key={index}>

@@ -17,9 +17,8 @@ const Event = () => {
                 storage.update("event", eventData);
                 sendData(url, eventData, storage.find("auth_token"))
                     .then((res) => {
-                        console.log(res);
                         setResponse(res.message);
-                        //history.push("/");
+                        history.push("/");
                     })
                     .catch((err) => setResponse(err.message));
             } else {
