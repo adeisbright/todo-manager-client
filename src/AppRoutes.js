@@ -8,7 +8,7 @@ const Todo = lazy(() => import("./Components/Todo"));
 const LandingPage = lazy(() => import("./Components/LandingPage"));
 const SingleTodo = lazy(() => import("./Components/SingleTodo"));
 const Event = lazy(() => import("./Components/Event"));
-// const DevelopersHub = lazy(() => import("./components/DevelopersHub"));
+const APIKey = lazy(() => import("./Components/APIKey"));
 
 const Preloader = () => {
     return (
@@ -39,6 +39,11 @@ export default function AppRoutes() {
             <AuthenticatedRoute path="/events">
                 <Suspense fallback={<Preloader />}>
                     <Event />
+                </Suspense>
+            </AuthenticatedRoute>
+            <AuthenticatedRoute path="/api">
+                <Suspense fallback={<Preloader />}>
+                    <APIKey />
                 </Suspense>
             </AuthenticatedRoute>
             <UnAuthenticatedRoute path="/" exact>
