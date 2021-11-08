@@ -1,38 +1,40 @@
 import React, { useState, useRef } from "react";
-import { useLoginContext } from "../Context/LoginContext";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { sendData } from "../lib/FetchHelper";
 import LocalStorage from "../lib/StorageService";
+import { Link } from "react-router-dom";
 
 const storage = new LocalStorage(window.localStorage);
 
-const Login = () => {
-    const { setLogin } = useLoginContext();
-
+const Signup = () => {
     let date = new Date();
     let year = date.getFullYear();
-
+    let history = useHistory();
+    let [userName, setUserName] = useState("");
     let [email, setEmail] = useState("");
     let [pwd, setPwd] = useState("");
     let [response, setResponse] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        let isAllValid = pwd && email;
+        let isAllValid = pwd && email && userName;
 
         if (isAllValid) {
             setResponse("Processing...");
-            let url = `http://localhost:3500/auth`;
+            let url = `http://localhost:3500/users`;
             sendData(url, {
                 email: email,
                 password: pwd,
+                name: userName,
             })
                 .then((res) => {
                     if (res.status === 200) {
-                        setResponse("Login was successful");
-                        setLogin(true);
-                        storage.add("login", true);
-                        storage.add("auth_token", res.token);
+                        setResponse(
+                            "Registration was successful.Redirectiong to Login in 2s"
+                        );
+                        setTimeout(() => {
+                            history.push("/login");
+                        }, 2000);
                         return;
                     } else {
                         setResponse(res.message);
@@ -51,8 +53,14 @@ const Login = () => {
                     <div className="center-text">
                         <h2>TDM</h2>
                         <p>Welcome back!</p>
-                        <p>Please login/signup to your account</p>
+                        <p>Please signup to create an account</p>
                     </div>
+                    <label htmlFor="username">Username</label>
+                    <input
+                        className="input input-border-faint"
+                        type="text"
+                        onChange={(e) => setUserName(e.target.value)}
+                    />
                     <label htmlFor="email">Email</label>
                     <input
                         className="input input-border-faint"
@@ -69,11 +77,12 @@ const Login = () => {
                         onChange={(e) => setPwd(e.target.value)}
                     />
                     <p>{response}</p>
-                    <button type="submit" className="btn btn-register m-r-1">
-                        Login
-                    </button>
-                    <Link to="/signup" className="login bg-white">
+
+                    <button type="submit" className="login bg-white m-r-1">
                         Sign up
+                    </button>
+                    <Link to="/login" className="btn btn-register m-r-1">
+                        Login
                     </Link>
                 </form>
             </main>
@@ -84,4 +93,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Signup;

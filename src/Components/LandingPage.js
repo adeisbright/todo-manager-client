@@ -15,9 +15,9 @@ const LandingPage = () => {
                         </h1>
                     </section>
                     <nav className="main-nav pad-5">
-                        <Link to="/docs" className="user-link">
+                        <a href="https://github.com" className="user-link">
                             Docs
-                        </Link>
+                        </a>
                         <Link to="/login" className="user-link login">
                             Login
                         </Link>

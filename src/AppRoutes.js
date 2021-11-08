@@ -4,6 +4,7 @@ import UnAuthenticatedRoute from "./lib/UnAuthenticatedRoute";
 import AuthenticatedRoute from "./lib/AuthenticatedRoute";
 
 const Login = lazy(() => import("./Components/Login"));
+const Signup = lazy(() => import("./Components/Signup"));
 const Todo = lazy(() => import("./Components/Todo"));
 const LandingPage = lazy(() => import("./Components/LandingPage"));
 const SingleTodo = lazy(() => import("./Components/SingleTodo"));
@@ -25,7 +26,11 @@ export default function AppRoutes() {
                     <Login />
                 </Suspense>
             </UnAuthenticatedRoute>
-
+            <UnAuthenticatedRoute path="/signup">
+                <Suspense fallback={<Preloader />}>
+                    <Signup />
+                </Suspense>
+            </UnAuthenticatedRoute>
             <AuthenticatedRoute path="/dashboard" exact>
                 <Suspense fallback={<Preloader />}>
                     <Todo />
