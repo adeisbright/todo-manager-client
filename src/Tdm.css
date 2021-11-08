@@ -738,6 +738,30 @@ a {
     display: block;
     margin-bottom: 10px;
 }
+.todo-area {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 30px;
+}
+.border-around {
+    border: 2px solid #000;
+}
+.todo-area img {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+}
+.item-description {
+    background: #ccc;
+    padding: 1rem;
+    border-radius: 8px;
+}
+.todo-area-body {
+    padding: 0.75rem;
+}
 @media (max-width: 568px) {
     .login-sidebar {
         display: none;

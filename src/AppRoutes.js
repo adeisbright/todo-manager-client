@@ -13,7 +13,7 @@ const Event = lazy(() => import("./Components/Event"));
 const Preloader = () => {
     return (
         <>
-            <p>Hi , wait while we load the page. This will not take long</p>
+            <p>Loading...</p>
         </>
     );
 };
