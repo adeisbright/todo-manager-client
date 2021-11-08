@@ -47,7 +47,7 @@ const Todo = () => {
     const fetchItems = (url, authToken) => {
         getData(url, authToken)
             .then((result) => {
-                // console.log(result);
+                console.log(result);
                 if (Array.isArray(result.data)) {
                     setItems(result.data);
                 }
@@ -84,7 +84,7 @@ const Todo = () => {
                 <>
                     <Navigation />
                     <div className="framer pad-tb-20">
-                        <strong>Filter Todo by Date</strong>
+                        <strong>Filter Todo by Start Date</strong>
                         <div className="d-flex">
                             <div className="fr-md-3 m-r-1">
                                 <label htmlFor="start">Start Date</label>
@@ -151,18 +151,21 @@ const Todo = () => {
                                 )}
                                 <div className="card-body m-b-1">
                                     <h3>{item.title}</h3>
-                                    <p className="m-b-1">
-                                        Starts :{" "}
-                                        {new Date(
-                                            item.startDate
-                                        ).toLocaleDateString()}
-                                    </p>
-                                    <p className="m-b-1">
-                                        Ends :{" "}
-                                        {new Date(
-                                            item.dueDate
-                                        ).toLocaleDateString()}
-                                    </p>
+                                    <div className="m-b-1">
+                                        <span style={{ marginRight: "2px" }}>
+                                            Begins :{" "}
+                                            {new Date(
+                                                item.startDate
+                                            ).toLocaleDateString()}
+                                        </span>
+                                        <span>
+                                            Ends :{" "}
+                                            {new Date(
+                                                item.dueDate
+                                            ).toLocaleDateString()}
+                                        </span>
+                                    </div>
+
                                     <p>
                                         {item.description.length > 50
                                             ? item.description.substring(

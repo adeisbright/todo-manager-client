@@ -13,7 +13,7 @@ const AddTodo = () => {
     return (
         <div className="pad-tb-20">
             <button
-                className="toggle-modal user-link login bg-green"
+                className="toggle-modal user-link login btn-primary"
                 onClick={showModal}
             >
                 Add +

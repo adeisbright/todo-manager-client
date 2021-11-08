@@ -667,6 +667,10 @@ a {
     color: #fff;
     cursor: pointer;
 }
+.btn-logout {
+    color: #000;
+    border: 1px solid #007bff;
+}
 .form-input,
 .btn-submit {
     display: block;
@@ -744,8 +748,8 @@ a {
 }
 @media (min-width: 768px) {
     .framer {
-        padding-right: 150px;
-        padding-left: 150px;
+        padding-right: 80px;
+        padding-left: 80px;
     }
     .fr-md-1 {
         flex: 0 0 8.333333%;
@@ -818,7 +822,7 @@ a {
 }
 @media (min-width: 1200px) {
     .framer {
-        padding-right: 200px;
-        padding-left: 200px;
+        padding-right: 120px;
+        padding-left: 120px;
     }
 }
