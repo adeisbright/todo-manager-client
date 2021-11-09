@@ -15,7 +15,10 @@ const LandingPage = () => {
                         </h1>
                     </section>
                     <nav className="main-nav pad-5">
-                        <a href="https://github.com" className="user-link">
+                        <a
+                            href="https://localhost:3500/docs"
+                            className="user-link"
+                        >
                             Docs
                         </a>
                         <Link to="/login" className="user-link login">
