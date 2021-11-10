@@ -57,7 +57,7 @@ export default function AppRoutes() {
                 </Suspense>
             </UnAuthenticatedRoute>
             <Route>
-                <p>Error 404 : Not Found</p>
+                <p>Error 404 : You are on the Wrong Path</p>
             </Route>
         </Switch>
     );
