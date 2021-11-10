@@ -95,10 +95,7 @@ const SingleTodo = () => {
             {item ? (
                 <>
                     <section className="todo-area">
-                        <main
-                            className="border-around"
-                            style={{ width: "50%" }}
-                        >
+                        <main className="border-around">
                             {item.todo_avatar ? (
                                 <figure>
                                     <img

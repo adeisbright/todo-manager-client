@@ -7,7 +7,7 @@ const Navigation = () => {
     return (
         <>
             <header>
-                <div className="d-flex framer justify-between pad-tb-20">
+                <div className="d-flex framer justify-between wrap pad-tb-20">
                     <section>
                         <h1 className="brand-identity">
                             <a className="brand-name" href="">

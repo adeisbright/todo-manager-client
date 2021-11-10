@@ -20,7 +20,6 @@ const TodoRevealer = ({ click, index, n, id, removeTodo }) => {
                 }}
             >
                 <Link to={"/items/" + id}>View</Link>
-                <span>Update</span>
                 <span
                     style={{ cursor: "pointer" }}
                     onClick={() => removeTodo(id)}
@@ -86,7 +85,7 @@ const Todo = () => {
                     {items.length > 0 && (
                         <div className="framer pad-tb-20">
                             <strong>Filter Todo by Start Date</strong>
-                            <div className="d-flex">
+                            <div className="d-flex wrap">
                                 <div className="fr-md-3 m-r-1">
                                     <label htmlFor="start">Start Date</label>
                                     <input

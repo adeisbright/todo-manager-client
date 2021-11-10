@@ -55,7 +55,10 @@ const TodoForm = ({ url }) => {
             })
                 .then((res) => res.json())
                 .then((res) => {
-                    setItems(items.concat([res.data]));
+                    if (res.status === 200) {
+                        setItems(items.concat([res.data]));
+                    }
+
                     setResponse(res.message);
                     if (storage.isStorage()) {
                         let eventData = {

@@ -40,7 +40,7 @@ const APIKey = () => {
 
     return (
         <>
-            <section className="d-flex framer justify-betwee m-b-2">
+            <section className="d-flex framer wrap justify-betwee m-b-2">
                 <main style={{ height: "100%" }}>
                     <h2>Welcome to the Public API Section</h2>
                     <p class="m-b-2">
