@@ -21,7 +21,7 @@ const Signup = () => {
 
         if (isAllValid) {
             setResponse("Processing...");
-            let url = `http://localhost:3500/users`;
+            let url = `https://starkstech-interview.nw.r.appspot.com/users`;
             sendData(url, {
                 email: email,
                 password: pwd,

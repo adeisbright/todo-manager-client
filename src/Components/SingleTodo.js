@@ -23,7 +23,7 @@ const SingleTodo = () => {
     let [response, setResponse] = useState("");
 
     let loginToken = storage.find("auth_token");
-    let url = "http://localhost:3500" + pathname;
+    let url = "https://starkstech-interview.nw.r.appspot.com" + pathname;
     //Ref for feedback as user leaves form field
     let titleRef = useRef(null);
 

@@ -4,7 +4,7 @@ import TodoForm from "./TodoForm";
 
 const AddTodo = () => {
     const [show, setShow] = useState(false);
-    let url = `http://localhost:3500/items`;
+    let url = `https://starkstech-interview.nw.r.appspot.com/items`;
     const showModal = (e) => {
         e.stopPropagation();
         setShow(true);

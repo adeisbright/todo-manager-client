@@ -16,7 +16,7 @@ const LandingPage = () => {
                     </section>
                     <nav className="main-nav pad-5">
                         <a
-                            href="https://localhost:3500/docs"
+                            href="https://starkstech-interview.nw.r.appspot.com/v1"
                             className="user-link"
                         >
                             Docs

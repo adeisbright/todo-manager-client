@@ -23,7 +23,7 @@ const APIKey = () => {
 
     const generateKey = () => {
         putData(
-            "http://localhost:3500/api/key",
+            "https://starkstech-interview.nw.r.appspot.com/key",
             {
                 time: Date.now(),
             },
@@ -35,7 +35,10 @@ const APIKey = () => {
             .catch((error) => console.error(error));
     };
     useEffect(() => {
-        getKey("http://localhost:3500/api/key", authToken);
+        getKey(
+            "https://starkstech-interview.nw.r.appspot.com/api/key",
+            authToken
+        );
     }, []);
 
     return (

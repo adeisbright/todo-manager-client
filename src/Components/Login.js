@@ -22,7 +22,7 @@ const Login = () => {
 
         if (isAllValid) {
             setResponse("Processing...");
-            let url = `http://localhost:3500/auth`;
+            let url = `https://starkstech-interview.nw.r.appspot.com/auth`;
             sendData(url, {
                 email: email,
                 password: pwd,
