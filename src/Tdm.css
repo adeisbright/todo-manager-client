@@ -783,6 +783,22 @@ a {
         margin-right: auto;
         margin-left: auto;
     }
+    .modal-main {
+        height: 35rem;
+        overflow: scroll;
+    }
+    .modal-main::-webkit-scrollbar {
+        width: 0.45rem;
+    }
+
+    .modal-main::-webkit-scrollbar-track {
+        -webkit-box-shadow: 2px 0 0 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .modal-main::-webkit-scrollbar-thumb {
+        background-color: darkgrey;
+        outline: 1px solid slategrey;
+    }
 }
 @media (min-width: 768px) {
     .framer {
