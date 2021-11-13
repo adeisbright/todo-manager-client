@@ -56,7 +56,7 @@ const Todo = () => {
 
     const removeTodo = (id) => {
         let loginToken = storage.find("auth_token");
-        deleteResource("http://localhost:3500/items/" + id, loginToken)
+        deleteResource("https://starkstech-interview.nw.r.appspot.com/items/" + id, loginToken)
             .then((result) => {
                 if (result.ok) {
                     let deleteIndex = items.findIndex(
@@ -72,7 +72,7 @@ const Todo = () => {
     useEffect(() => {
         loginToken = storage.find("auth_token");
         fetchItems(
-            "http://localhost:3500/items?page_no=1&offset=6",
+            "https://starkstech-interview.nw.r.appspot.com/items?page_no=1&offset=6",
             loginToken
         );
     }, []);
@@ -110,7 +110,7 @@ const Todo = () => {
                                         className="btn btn-primary"
                                         onClick={() =>
                                             fetchItems(
-                                                `http://localhost:3500/items?from=${from}&to=${to}`,
+                                                `https://starkstech-interview.nw.r.appspot.com/items?from=${from}&to=${to}`,
                                                 loginToken
                                             )
                                         }
