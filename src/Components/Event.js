@@ -28,7 +28,7 @@ const Event = () => {
         }
     };
     useEffect(() => {
-        createEvent("http://localhost:3500/events");
+        createEvent("https://starkstech-interview.nw.r.appspot.com/events");
     }, []);
     return (
         <>

@@ -1,7 +1,8 @@
-<<<<<<< HEAD
-# Todo Manager Web App
-=======
+[This app is running here on AWS Amplify](https://main.d3p7xrhhfx1tot.amplifyapp.com)
+
+
 # todo-manager-client
 A web client built with React to consume Todo API.
 A robust react guide
->>>>>>> ec7eecff8d25b5bead9c4cd35d389b49fa66dd19
+
+## Table of Contents
