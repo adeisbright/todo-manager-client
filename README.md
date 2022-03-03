@@ -1,4 +1,4 @@
-[This app is running here on AWS Amplify](https://main.d3p7xrhhfx1tot.amplifyapp.com)
+[This app is running here on AWS Amplify](https://main.d1xb3r1fyy7r7g.amplifyapp.com/)
 
 
 # todo-manager-client
